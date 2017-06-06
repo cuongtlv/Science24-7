@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import net.hockeyapp.android.CrashManager;
+import net.hockeyapp.android.UpdateManager;
+
 public class StartingScreen extends AppCompatActivity {
 
     private static ImageView img_news, img_exit, img_fav, img_about;
@@ -21,6 +24,7 @@ public class StartingScreen extends AppCompatActivity {
         click_Exit();
         click_Fav();
         click_About();
+        checkForUpdates();
     }
 
     public void click_News(){
@@ -94,5 +98,36 @@ public class StartingScreen extends AppCompatActivity {
         public void onClick(DialogInterface dialog, int which) {
             dialog.cancel();
         }
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        // ... your own onResume implementation
+        checkForCrashes();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        unregisterManagers();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterManagers();
+    }
+
+    private void checkForCrashes() {
+        CrashManager.register(this);
+    }
+
+    private void checkForUpdates() {
+        // Remove this for store builds!
+        UpdateManager.register(this);
+    }
+
+    private void unregisterManagers() {
+        UpdateManager.unregister();
     }
 }
