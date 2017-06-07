@@ -1,58 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@+id/cardview"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/cardview"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/cardview_dark_background"
     app:cardElevation="10dp"
-    app:cardBackgroundColor="@color/cardview_dark_background">
+    >
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         >
+
         <TextView
-            android:layout_margin="10dp"
+            android:id="@+id/date_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceSmall"
-            android:text="Date of post"
-            android:id="@+id/date_text"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="10dp"
+            android:text="Date of post"
+            android:textAppearance="?android:textAppearanceSmall"
             />
+
         <ImageView
-            android:src="@drawable/test"
+            android:id="@+id/thumb_img"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/thumb_img"
             android:layout_below="@+id/date_text"
             android:layout_centerHorizontal="true"
+            android:src="@drawable/test"
             />
+
         <TextView
-            android:maxLines="1"
+            android:id="@+id/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:text="Title of post"
-            android:id="@+id/title_text"
             android:layout_alignBottom="@+id/thumb_img"
             android:layout_centerHorizontal="true"
-            android:gravity="center"
             android:background="#80000000"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Title of post"
+            android:textAppearance="?android:textAppearanceLarge"
             />
+
         <TextView
-            android:layout_margin="10dp"
+            android:id="@+id/description_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="Description of post"
-            android:id="@+id/description_text"
             android:layout_below="@+id/thumb_img"
             android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
             android:gravity="left"
+            android:text="Description of post"
+            android:textAppearance="?android:textAppearanceMedium"
             />
     </RelativeLayout>
-
 </android.support.v7.widget.CardView>
