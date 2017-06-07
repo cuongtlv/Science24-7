@@ -8,9 +8,10 @@ import android.view.View;
  * Created by My PC on 25-Apr-17.
  */
 
-public class Vertical extends RecyclerView.ItemDecoration{
+public class Vertical extends RecyclerView.ItemDecoration {
     int Space;
-    public Vertical(int Space){
+
+    public Vertical(int Space) {
         this.Space = Space;
     }
 
@@ -20,7 +21,7 @@ public class Vertical extends RecyclerView.ItemDecoration{
         outRect.right = Space;
         outRect.bottom = Space;
         //Checking if the card view is the 1st one on the list.
-        if (parent.getChildLayoutPosition(view) == 0){
+        if (parent.getChildLayoutPosition(view) == 0) {
             outRect.top = Space;
         }
     }

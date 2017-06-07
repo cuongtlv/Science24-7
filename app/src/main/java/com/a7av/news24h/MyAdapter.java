@@ -14,8 +14,6 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 /**
@@ -23,16 +21,17 @@ import java.util.ArrayList;
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    ArrayList<FeedItem>feedItems;
+    ArrayList<FeedItem> feedItems;
     Context context;
 
-    public MyAdapter(Context context, ArrayList<FeedItem>feedItems){
-        this.feedItems=feedItems;
-        this.context=context;
+    public MyAdapter(Context context, ArrayList<FeedItem> feedItems) {
+        this.feedItems = feedItems;
+        this.context = context;
     }
+
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.news_item,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.news_item, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(view);
         return viewHolder;
     }
@@ -49,7 +48,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewsShowOut.class);
-                intent.putExtra("Link",current.getLink());
+                intent.putExtra("Link", current.getLink());
                 context.startActivity(intent);
             }
         });
@@ -65,13 +64,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         TextView Title, Description, PubDate;
         ImageView Thumb;
         CardView cardView;
+
         public MyViewHolder(View itemView) {
             super(itemView);
-            Title = (TextView)itemView.findViewById(R.id.title_text);
-            Description = (TextView)itemView.findViewById(R.id.description_text);
-            PubDate = (TextView)itemView.findViewById(R.id.date_text);
-            Thumb = (ImageView)itemView.findViewById(R.id.thumb_img);
-            cardView = (CardView)itemView.findViewById(R.id.cardview);
+            Title = (TextView) itemView.findViewById(R.id.title_text);
+            Description = (TextView) itemView.findViewById(R.id.description_text);
+            PubDate = (TextView) itemView.findViewById(R.id.date_text);
+            Thumb = (ImageView) itemView.findViewById(R.id.thumb_img);
+            cardView = (CardView) itemView.findViewById(R.id.cardview);
         }
     }
 }

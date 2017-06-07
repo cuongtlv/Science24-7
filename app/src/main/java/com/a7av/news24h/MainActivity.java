@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-        ReadRss readRss = new ReadRss(this,recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        ReadRss readRss = new ReadRss(this, recyclerView);
         readRss.execute();
     }
 }
