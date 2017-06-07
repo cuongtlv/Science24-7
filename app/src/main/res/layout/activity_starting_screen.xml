@@ -46,7 +46,7 @@
                 >
 
                 <ImageView
-                    android:id="@+id/img_news"
+                    android:id="@+id/activity_starting_screen_iv_news"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:background="@drawable/oval_39" />
@@ -63,7 +63,7 @@
             </RelativeLayout>
 
             <ImageView
-                android:id="@+id/img_favorites"
+                android:id="@+id/activity_starting_screen_iv_fav"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/fav" />
@@ -78,14 +78,14 @@
             android:layout_marginTop="50dp"
             >
             <ImageView
-                android:id="@+id/img_about"
+                android:id="@+id/activity_starting_screen_iv_about"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/about"
                 android:layout_marginRight="50dp"
                 />
             <ImageView
-                android:id="@+id/img_exit"
+                android:id="@+id/activity_starting_screen_iv_exit"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/exit"
