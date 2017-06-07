@@ -2,9 +2,9 @@ package com.a7av.news24h;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,6 +15,7 @@ public class StartingScreen extends AppCompatActivity {
 
     private static ImageView iv_news, iv_fav, iv_exit, iv_about;
     private AlertDialog.Builder a;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +27,8 @@ public class StartingScreen extends AppCompatActivity {
         checkForUpdates();
     }
 
-    public void btn_news(){
-        iv_news = (ImageView)findViewById(R.id.activity_starting_screen_iv_news);
+    public void btn_news() {
+        iv_news = (ImageView) findViewById(R.id.activity_starting_screen_iv_news);
         iv_news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,20 +37,23 @@ public class StartingScreen extends AppCompatActivity {
             }
         });
     }
-    public void btn_exit(){
+
+    public void btn_exit() {
         iv_exit = (ImageView) findViewById(R.id.activity_starting_screen_iv_exit);
         iv_exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);
                 a.setTitle("Exit");
-                a.setMessage("Do you want to exit ?").setPositiveButton("Yes", new react1()).setNegativeButton("No", new react2());
+                a.setMessage("Do you want to exit ?").setPositiveButton("Yes", new react1())
+                 .setNegativeButton("No", new react2());
                 a.show();
             }
         });
     }
-    public void btn_fav(){
-        iv_fav = (ImageView)findViewById(R.id.activity_starting_screen_iv_fav);
+
+    public void btn_fav() {
+        iv_fav = (ImageView) findViewById(R.id.activity_starting_screen_iv_fav);
         iv_fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,8 +70,9 @@ public class StartingScreen extends AppCompatActivity {
             }
         });
     }
-    public void btn_about(){
-        iv_about = (ImageView)findViewById(R.id.activity_starting_screen_iv_about);
+
+    public void btn_about() {
+        iv_about = (ImageView) findViewById(R.id.activity_starting_screen_iv_about);
         iv_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,19 +90,6 @@ public class StartingScreen extends AppCompatActivity {
         });
     }
 
-    private class react1 implements DialogInterface.OnClickListener {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            StartingScreen.this.finish();
-        }
-    }
-
-    private class react2 implements DialogInterface.OnClickListener {
-        @Override
-        public void onClick(DialogInterface dialog, int which) {
-            dialog.cancel();
-        }
-    }
     @Override
     public void onResume() {
         super.onResume();
@@ -128,5 +120,19 @@ public class StartingScreen extends AppCompatActivity {
 
     private void unregisterManagers() {
         UpdateManager.unregister();
+    }
+
+    private class react1 implements DialogInterface.OnClickListener {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            StartingScreen.this.finish();
+        }
+    }
+
+    private class react2 implements DialogInterface.OnClickListener {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            dialog.cancel();
+        }
     }
 }
