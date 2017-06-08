@@ -1,6 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'key0'
+            keyPassword '123a456b'
+            storeFile file('C:/Users/NHANNGUYEN-PC/keystores/key_debug.jks')
+            storePassword '123a456b'
+        }
+        release {
+            keyAlias 'key1'
+            keyPassword '123a456b'
+            storeFile file('C:/Users/NHANNGUYEN-PC/keystores/key_release.jks')
+            storePassword '123a456b'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -11,11 +25,20 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [HOCKEYAPP_APP_ID: "af4418a54474440ab03317a5fa5c8502"]
+        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        dev {
+            signingConfig signingConfigs.debug
+        }
+        productivity {
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -43,6 +66,7 @@ dependencies {
     compile 'com.daimajia.easing:library:2.0@aar'
     compile 'com.daimajia.androidanimations:library:2.2@aar'
     compile 'net.hockeyapp.android:HockeySDK:4.0.0'
+    compile 'com.android.support:multidex:1.0.1'
     testCompile 'junit:junit:4.12'
 }
 dependencies {
