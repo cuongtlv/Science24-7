@@ -1,0 +1,3 @@
+[submodule "Submodule-Sample"]
+	path = Submodule-Sample
+	url = https://github.com/cuongtlv/Submodule-Sample.git
