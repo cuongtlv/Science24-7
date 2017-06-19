@@ -1,7 +1,7 @@
 package com.a7av.news24h;
 
 /**
- * Created by My PC on 19-Apr-17.
+ * Getters and Setters
  */
 
 public class FeedItem {

@@ -5,9 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * Created by My PC on 25-Apr-17.
+ *  Setting elavator for cardview
  */
-
 public class Vertical extends RecyclerView.ItemDecoration {
     int Space;
 

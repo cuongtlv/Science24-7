@@ -6,13 +6,13 @@ android {
         debug {
             keyAlias 'key0'
             keyPassword '123a456b'
-            storeFile file('C:/Users/NHANNGUYEN-PC/keystores/key_debug.jks')
+            storeFile file('app/keystores/key_debug.jks')
             storePassword '123a456b'
         }
         release {
             keyAlias 'key1'
             keyPassword '123a456b'
-            storeFile file('C:/Users/NHANNGUYEN-PC/keystores/key_release.jks')
+            storeFile file('app/keystores/key_release.jks')
             storePassword '123a456b'
         }
     }

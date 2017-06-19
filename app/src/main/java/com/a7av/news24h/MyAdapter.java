@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 /**
- * Created by My PC on 20-Apr-17.
+ * Custom adapter for RecyclerView
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {

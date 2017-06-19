@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import net.hockeyapp.android.CrashManager;
 import net.hockeyapp.android.UpdateManager;
 
+/**
+ * Openning view for user interacting.
+ */
 public class StartingScreen extends AppCompatActivity {
 
     private static ImageView iv_news, iv_fav, iv_exit, iv_about;

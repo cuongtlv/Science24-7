@@ -20,7 +20,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 /**
- * Created by My PC on 18-Apr-17.
+ * Creating items list for RecyclerView
  */
 
 public class ReadRss extends AsyncTask<Void, Void, Void> {
