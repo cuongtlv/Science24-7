@@ -77,3 +77,4 @@ dependencies {
 dependencies {
     compile 'com.android.support.constraint:constraint-layout:+'
 }
+apply from: '../quality/quality.gradle'
