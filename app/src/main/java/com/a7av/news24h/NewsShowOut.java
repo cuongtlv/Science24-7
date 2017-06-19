@@ -9,7 +9,7 @@ import android.webkit.WebView;
  */
 public class NewsShowOut extends AppCompatActivity {
 
-    WebView webView;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

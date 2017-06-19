@@ -16,23 +16,23 @@ import net.hockeyapp.android.UpdateManager;
  */
 public class StartingScreen extends AppCompatActivity {
 
-    private static ImageView iv_news, iv_fav, iv_exit, iv_about;
+    private static ImageView iv_News , iv_Fav , iv_Exit , iv_About;
     private AlertDialog.Builder a;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starting_screen);
-        btn_news();
-        btn_exit();
-        btn_fav();
-        btn_about();
+        btn_News();
+        btn_Exit();
+        btn_Fav();
+        btn_About();
         checkForUpdates();
     }
 
-    public void btn_news() {
-        iv_news = (ImageView) findViewById(R.id.activity_starting_screen_iv_news);
-        iv_news.setOnClickListener(new View.OnClickListener() {
+    public void btn_News() {
+        iv_News = (ImageView) findViewById(R.id.activity_starting_screen_iv_news);
+        iv_News.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(StartingScreen.this, MainActivity.class);
@@ -41,9 +41,9 @@ public class StartingScreen extends AppCompatActivity {
         });
     }
 
-    public void btn_exit() {
-        iv_exit = (ImageView) findViewById(R.id.activity_starting_screen_iv_exit);
-        iv_exit.setOnClickListener(new View.OnClickListener() {
+    public void btn_Exit() {
+        iv_Exit = (ImageView) findViewById(R.id.activity_starting_screen_iv_exit);
+        iv_Exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);
@@ -55,9 +55,9 @@ public class StartingScreen extends AppCompatActivity {
         });
     }
 
-    public void btn_fav() {
-        iv_fav = (ImageView) findViewById(R.id.activity_starting_screen_iv_fav);
-        iv_fav.setOnClickListener(new View.OnClickListener() {
+    public void btn_Fav() {
+        iv_Fav = (ImageView) findViewById(R.id.activity_starting_screen_iv_fav);
+        iv_Fav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);
@@ -74,9 +74,9 @@ public class StartingScreen extends AppCompatActivity {
         });
     }
 
-    public void btn_about() {
-        iv_about = (ImageView) findViewById(R.id.activity_starting_screen_iv_about);
-        iv_about.setOnClickListener(new View.OnClickListener() {
+    public void btn_About() {
+        iv_About = (ImageView) findViewById(R.id.activity_starting_screen_iv_about);
+        iv_About.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);

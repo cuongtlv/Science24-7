@@ -5,11 +5,11 @@ package com.a7av.news24h;
  */
 
 public class FeedItem {
-    String title;
-    String link;
-    String description;
-    String pubDate;
-    String thumbUrl;
+    private String title;
+    private String link;
+    private String description;
+    private String pubDate;
+    private String thumbUrl;
 
     public String getTitle() {
         return title;

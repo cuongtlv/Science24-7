@@ -21,8 +21,8 @@ import java.util.ArrayList;
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    ArrayList<FeedItem> feedItems;
-    Context context;
+    private ArrayList<FeedItem> feedItems;
+    private Context context;
 
     public MyAdapter(Context context, ArrayList<FeedItem> feedItems) {
         this.feedItems = feedItems;
@@ -39,16 +39,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         YoYo.with(Techniques.FadeIn).playOn(holder.cardView);
-        final FeedItem current = feedItems.get(position);
-        holder.Title.setText(current.getTitle());
-        holder.Description.setText(current.getDescription());
-        holder.PubDate.setText(current.getPubDate());
-        Picasso.with(context).load(current.getThumbUrl()).into(holder.Thumb);
+        final FeedItem CURRENT = feedItems.get(position);
+        holder.title.setText(CURRENT.getTitle());
+        holder.description.setText(CURRENT.getDescription());
+        holder.pubDate.setText(CURRENT.getPubDate());
+        Picasso.with(context).load(CURRENT.getThumbUrl()).into(holder.thumb);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewsShowOut.class);
-                intent.putExtra("Link", current.getLink());
+                intent.putExtra("Link", CURRENT.getLink());
                 context.startActivity(intent);
             }
         });
@@ -61,16 +61,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView Title, Description, PubDate;
-        ImageView Thumb;
-        CardView cardView;
+        private TextView title , description , pubDate;
+        private ImageView thumb;
+        private CardView cardView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            Title = (TextView) itemView.findViewById(R.id.title_text);
-            Description = (TextView) itemView.findViewById(R.id.description_text);
-            PubDate = (TextView) itemView.findViewById(R.id.date_text);
-            Thumb = (ImageView) itemView.findViewById(R.id.thumb_img);
+            title = (TextView) itemView.findViewById(R.id.title_text);
+            description = (TextView) itemView.findViewById(R.id.description_text);
+            pubDate = (TextView) itemView.findViewById(R.id.date_text);
+            thumb = (ImageView) itemView.findViewById(R.id.thumb_img);
             cardView = (CardView) itemView.findViewById(R.id.cardview);
         }
     }

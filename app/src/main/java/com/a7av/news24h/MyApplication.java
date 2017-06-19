@@ -6,5 +6,5 @@ import android.support.multidex.MultiDexApplication;
  * MultiDex configuration
  */
 
-public class MyApplication extends MultiDexApplication{
+public class MyApplication extends MultiDexApplication {
 }

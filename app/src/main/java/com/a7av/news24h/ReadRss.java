@@ -24,13 +24,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 
 public class ReadRss extends AsyncTask<Void, Void, Void> {
-    Context context;
-    String address = "http://www.sciencemag.org/rss/news_current.xml";
-    ProgressDialog progressDialog;
-    ArrayList<FeedItem> feedItems;
-    RecyclerView recyclerView;
-    URL url;
-
+    private Context context;
+    private String address = "http://www.sciencemag.org/rss/news_current.xml";
+    private ProgressDialog progressDialog;
+    private ArrayList<FeedItem> feedItems;
+    private RecyclerView recyclerView;
+    private URL url;
 
     public ReadRss(Context context, RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
@@ -57,12 +56,12 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected Void doInBackground(Void... params) {
-        ProcessXml(Getdata());
+        processXml(getData());
         return null;
     }
 
     // processing the data in the xml
-    private void ProcessXml(Document data) {
+    private void processXml(Document data) {
         if (data != null) {
             feedItems = new ArrayList<>();
             Element root = data.getDocumentElement();
@@ -96,7 +95,7 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
     }
 
     // get RSS data from internet and put it in xmlDoc
-    public Document Getdata() {
+    public Document getData() {
         try {
             url = new URL(address);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();

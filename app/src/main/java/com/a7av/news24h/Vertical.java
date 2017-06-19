@@ -8,20 +8,20 @@ import android.view.View;
  *  Setting elavator for cardview
  */
 public class Vertical extends RecyclerView.ItemDecoration {
-    int Space;
+    private int space;
 
-    public Vertical(int Space) {
-        this.Space = Space;
+    public Vertical(int space) {
+        this.space = space;
     }
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        outRect.left = Space;
-        outRect.right = Space;
-        outRect.bottom = Space;
+        outRect.left = space;
+        outRect.right = space;
+        outRect.bottom = space;
         //Checking if the card view is the 1st one on the list.
         if (parent.getChildLayoutPosition(view) == 0) {
-            outRect.top = Space;
+            outRect.top = space;
         }
     }
 }
