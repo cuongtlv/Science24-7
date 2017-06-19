@@ -39,16 +39,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         YoYo.with(Techniques.FadeIn).playOn(holder.cardView);
-        final FeedItem CURRENT_ITEM = feedItems.get(position);
-        holder.title.setText(CURRENT_ITEM.getTitle());
-        holder.description.setText(CURRENT_ITEM.getDescription());
-        holder.pubDate.setText(CURRENT_ITEM.getPubDate());
-        Picasso.with(context).load(CURRENT_ITEM.getThumbUrl()).into(holder.thumb);
+        final FeedItem CURRENT = feedItems.get(position);
+        holder.title.setText(CURRENT.getTitle());
+        holder.description.setText(CURRENT.getDescription());
+        holder.pubDate.setText(CURRENT.getPubDate());
+        Picasso.with(context).load(CURRENT.getThumbUrl()).into(holder.thumb);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, NewsShowOut.class);
-                intent.putExtra("Link", CURRENT_ITEM.getLink());
+                intent.putExtra("Link", CURRENT.getLink());
                 context.startActivity(intent);
             }
         });
