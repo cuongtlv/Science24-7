@@ -32,7 +32,7 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
     private ArrayList<FeedItem> feedItems;
     private RecyclerView recyclerView;
     private URL url;
-    private Logger LOGGER = Logger.getLogger(ReadRss.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ReadRss.class.getName());
 
     public ReadRss(Context context, RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
