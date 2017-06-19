@@ -94,7 +94,7 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
         }
     }
 
-    // get RSS data from internet and put it in xmlDoc
+    // get RSS data from internet and return it in xmlDoc
     public Document getData() {
         try {
             url = new URL(address);
@@ -106,7 +106,6 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
             Document xmlDoc = builder.parse(inputStream);
             return xmlDoc;
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
 
