@@ -16,10 +16,10 @@ import net.hockeyapp.android.UpdateManager;
  */
 public class StartingScreen extends AppCompatActivity {
 
-    private static ImageView iVNEWS;
-    private static ImageView iVFAV;
-    private static ImageView iVEXIT;
-    private static ImageView iVABOUT;
+    private static ImageView myIvNews;
+    private static ImageView myIvFav;
+    private static ImageView myIvExit;
+    private static ImageView myIvAbout;
     private AlertDialog.Builder a;
 
     @Override
@@ -34,8 +34,8 @@ public class StartingScreen extends AppCompatActivity {
     }
 
     public void btnNews() {
-        iVNEWS = (ImageView) findViewById(R.id.activity_starting_screen_iv_news);
-        iVNEWS.setOnClickListener(new View.OnClickListener() {
+        myIvNews = (ImageView) findViewById(R.id.activity_starting_screen_iv_news);
+        myIvNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(StartingScreen.this, MainActivity.class);
@@ -45,8 +45,8 @@ public class StartingScreen extends AppCompatActivity {
     }
 
     public void btnExit() {
-        iVEXIT = (ImageView) findViewById(R.id.activity_starting_screen_iv_exit);
-        iVEXIT.setOnClickListener(new View.OnClickListener() {
+        myIvExit = (ImageView) findViewById(R.id.activity_starting_screen_iv_exit);
+        myIvExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);
@@ -59,8 +59,8 @@ public class StartingScreen extends AppCompatActivity {
     }
 
     public void btnFav() {
-        iVFAV = (ImageView) findViewById(R.id.activity_starting_screen_iv_fav);
-        iVFAV.setOnClickListener(new View.OnClickListener() {
+        myIvFav = (ImageView) findViewById(R.id.activity_starting_screen_iv_fav);
+        myIvFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);
@@ -78,8 +78,8 @@ public class StartingScreen extends AppCompatActivity {
     }
 
     public void btnAbout() {
-        iVABOUT = (ImageView) findViewById(R.id.activity_starting_screen_iv_about);
-        iVABOUT.setOnClickListener(new View.OnClickListener() {
+        myIvAbout = (ImageView) findViewById(R.id.activity_starting_screen_iv_about);
+        myIvAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 a = new AlertDialog.Builder(StartingScreen.this);
