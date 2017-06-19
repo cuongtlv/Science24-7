@@ -15,6 +15,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -30,6 +32,7 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
     private ArrayList<FeedItem> feedItems;
     private RecyclerView recyclerView;
     private URL url;
+    private final static Logger LOGGER = Logger.getLogger(ReadRss.class.getName());
 
     public ReadRss(Context context, RecyclerView recyclerView) {
         this.recyclerView = recyclerView;
@@ -106,6 +109,7 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
             Document xmlDoc = builder.parse(inputStream);
             return xmlDoc;
         } catch (Exception e) {
+            LOGGER.log(Level.WARNING, e.toString(), e);
             return null;
         }
 
