@@ -18,9 +18,9 @@
             android:value="${HOCKEYAPP_APP_ID}"
             />
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity_"/>
         <activity android:name=".NewsShowOut" />
-        <activity android:name=".StartingScreen">
+        <activity android:name=".StartingScreen_">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

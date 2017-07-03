@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.mikepenz.fastadapter.adapters.FastItemAdapter;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -15,6 +17,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,9 +55,11 @@ public class ReadRss extends AsyncTask<Void, Void, Void> {
         super.onPostExecute(aVoid);
         progressDialog.dismiss();
         MyAdapter adapter = new MyAdapter(context, feedItems);
+        //FastItemAdapter<MyAdapter> fastAdapter = new FastItemAdapter<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.addItemDecoration(new Vertical(30));
         recyclerView.setAdapter(adapter);
+
     }
 
     @Override
